@@ -1,0 +1,16 @@
+# git
+.git
+.gitignore
+
+#docer
+.docker
+
+#python
+quantum-dragons/__pycache__/
+quantum-dragons/*/__pycache__/
+quantum-dragons/*/*/__pycache__/
+quantum-dragons/*/*/*/__pycache__/
+.env/
+.venv/
+venv/
+
