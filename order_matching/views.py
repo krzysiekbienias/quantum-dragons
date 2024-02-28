@@ -4,4 +4,7 @@ from django.shortcuts import render
 
 
 def landing_page(request):
-    return render(request,"landing_page.html")
+    return render(request,"order_matching/landing_page.html")
+
+def trade_book(request):
+    return render(request,'order_matching/trade_book.html')
