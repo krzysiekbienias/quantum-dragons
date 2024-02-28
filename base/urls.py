@@ -24,5 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("order_matching.urls",namespace='order_matching')),
-    path("__reload__/", include("django_browser_reload.urls"))
+    
+    path("__reload__/", include("django_browser_reload.urls")),
+    path("icons/", include("dj_iconify.urls"))
 ]

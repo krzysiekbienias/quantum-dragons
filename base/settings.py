@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,11 +42,14 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    "dj_iconify.apps.DjIconifyConfig",
 
     'order_matching'
 ]
 
 TAILWIND_APP_NAME='theme'
+
+NPM_BIN_PATH='/usr/local/bin/npm'
 
 MIDDLEWARE = [
     'django_browser_reload.middleware.BrowserReloadMiddleware',
@@ -128,7 +132,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS=[BASE_DIR/'static']
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+YARN_INSTALLED_APPS = [
+  "@iconify/json",
+]
+NODE_MODULES_ROOT = os.path.join(BASE_DIR, "node_modules")
+ICONIFY_JSON_ROOT = os.path.join(NODE_MODULES_ROOT, "@iconify", "json")
